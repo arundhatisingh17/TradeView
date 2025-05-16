@@ -1,3 +1,4 @@
 # TradeView
 
-! [Dashboard Screenshot] (./ss1.png)
+![Dashboard Screenshot](ss1.png)
+
