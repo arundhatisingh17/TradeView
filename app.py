@@ -18,6 +18,8 @@ from huggingface_hub import login
 import tempfile
 import os
 from dotenv import load_dotenv
+import yfinance as yf
+import plotly.express as pt
 
 load_dotenv('/content/drive/MyDrive/my_secrets.env')
 elastic_password = os.getenv('elastic_password')
@@ -66,7 +68,7 @@ You are a helpful assistant.<|end|>
 <|user|>
 Given the following information, answer the question.
 
-Context: 
+Context:
 {% for document in documents %}
     {{ document.content }}
 {% endfor %}
@@ -111,7 +113,7 @@ API_KEY = os.getenv('API_key')
 central = pytz.timezone("US/Central")
 
 def fetch_stock_quote(ticker):
-    time.sleep(1.5) 
+    time.sleep(1.5)
     url = f"https://finnhub.io/api/v1/quote?symbol={ticker}&token={API_KEY}"
     resp = requests.get(url)
     return resp.json()
@@ -119,6 +121,7 @@ def fetch_stock_quote(ticker):
 col1, col2 = st.columns(2)
 
 with col1:
+    st.divider()
     st.subheader("📊 Stock Snapshot Viewer")
     tickers = ["Select a company: "] + tech_tickers
     selected = st.selectbox("Company:", tickers)
@@ -147,7 +150,7 @@ with col2:
     if selected != "Select a company: ":
         selected_quote = fetch_stock_quote(selected)
         selected_close = selected_quote["c"]
-
+        st.divider()
         st.subheader("📊 Compare with Peer Company")
         peer_candidates = [
             t for t in tech_tickers
@@ -180,7 +183,7 @@ with col2:
             st.info("No peers found within 5% of the selected company's close price.")
 
 
-
+st.divider()
 if selected != "Select a company: ":
     st.subheader(f"📄 Upload {selected}'s Financial Report to Estimate Investment Timing")
 
@@ -197,7 +200,19 @@ if selected != "Select a company: ":
               response = generate_summary_from_pdf(uploaded_file, user_query)
               st.success("Generated Summary:")
               st.write(response)
-                      
+
         else:
             st.info("Please select a company to upload its financial report.")
 
+
+st.divider()
+if selected != "Select a company: ":
+    st.subheader(f"📈 Visualize {selected}'s Performance Over Time")
+    start_date = st.date_input("Start Date", value=pd.to_datetime("2020-01-01"))
+    end_date = st.date_input("End Date", value=pd.to_datetime("today"))
+    data = yf.download(tech_tickers, start=start_date, end=end_date, group_by = 'ticker' )
+    data = data.stack(level = 0).reset_index()
+    plot_data = data[data['Ticker'] == selected]
+
+    fig = pt.line(plot_data, x='Date', y='Close', title=f'{selected} Close Price From {start_date} to {end_date}')
+    st.plotly_chart(fig, use_container_width=True)
