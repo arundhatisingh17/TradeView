@@ -107,7 +107,7 @@ def generate_summary_from_pdf(uploaded_file, query):
 
 
 tech_tickers = ["AAPL", "MSFT", "GOOGL", "AMZN", "META", "NVDA", "TSLA", "AMD", "CRM", "ADBE", "INTC", "ORCL"]
-API_KEY = "d0idvshr01qrfsafijd0d0idvshr01qrfsafijdg"
+API_KEY = os.getenv('API_key')
 central = pytz.timezone("US/Central")
 
 def fetch_stock_quote(ticker):
