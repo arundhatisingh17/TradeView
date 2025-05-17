@@ -4,7 +4,7 @@ TradeView is an interactive financial dashboard that provides a streamlined view
 
 ["AAPL", "MSFT", "GOOGL", "AMZN", "META", "NVDA", "TSLA", "AMD", "CRM", "ADBE", "INTC", "ORCL"]
 
-The application integrates real-time data from Finnhub and historical price data from Yahoo Finance. Users can explore recent stock snapshots, analyze past performance across custom date ranges, and upload company financial reports for intelligent summarization.
+The Streamlit dashboard integrates real-time data from Finnhub and historical price data from Yahoo Finance. Users can explore recent stock snapshots, analyze past performance across custom date ranges, and upload company financial reports for intelligent summarization.
 
 
 ### Key Features
