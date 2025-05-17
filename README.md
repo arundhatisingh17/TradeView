@@ -1,4 +1,4 @@
-# TradeView
+# TradeView 
 
 TradeView is an interactive financial dashboard designed to give a clear and actionable snapshot of twelve of the world's leading tech companies:
 
