@@ -1,4 +1,4 @@
-### TradeView
+# TradeView
 
 TradeView is an interactive financial dashboard that provides a streamlined view of key statistics for twelve leading tech companies:
 
@@ -7,14 +7,14 @@ TradeView is an interactive financial dashboard that provides a streamlined view
 The application integrates real-time data from Finnhub and historical price data from Yahoo Finance. Users can explore recent stock snapshots, analyze past performance across custom date ranges, and upload company financial reports for intelligent summarization.
 
 
-# Key Features
+### Key Features
 
 - Real-time stock insights: Current price, percent change, high/low values, and more.
 
 - Historical trends: Line charts representing closing prices of the selected stock over custom time intervals.
   
 
-# RAG-Powered LLM Summarizer:
+### RAG-Powered LLM Summarizer:
 
 Upload a financial report PDF (e.g., earnings reports, investor statements).
 
@@ -22,7 +22,7 @@ The built-in Retrieval-Augmented Generation (RAG) pipeline will summarize key fi
 
 Summaries highlight key metrics and performance trends.
 
-# How to Use the Financial Report Summarizer
+### How to Use the Financial Report Summarizer
 
 Upload a PDF financial report related to the selected company.
 
