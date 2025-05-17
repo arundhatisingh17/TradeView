@@ -6,6 +6,7 @@ TradeView is an interactive financial dashboard designed to give a clear and act
 
 Built with Streamlit, this dashboard combines real-time financial data, historical analysis, and a powerful LLM-based financial report summarizer.
 
+
 ### Key Features
 
 #### Real-Time Stock Insights
@@ -33,6 +34,7 @@ Built with Streamlit, this dashboard combines real-time financial data, historic
 - A Retrieval-Augmented Generation (RAG) pipeline powered by HuggingFace and Haystack reads and summarizes key insights
 
 - Results are clear, concise, and can easily be understood without a finance degree!
+  
   
 
 ### How to Use the Financial Report Summarizer
