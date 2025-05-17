@@ -8,19 +8,19 @@ Built with Streamlit, this dashboard combines real-time financial data, historic
 
 ### Key Features
 
-📈 Real-Time Stock Insights
+#### Real-Time Stock Insights
 
 - Fetches live statistics from the Finnhub API
 
 - Displays current price, percent change, high/low values, previous close, and more
 
-📉 Historical Performance Visualization
+#### Historical Performance Visualization
 
 - Interactive line charts using data from Yahoo Finance
 
 - Users can customize the time range to analyze price trends
 
-🧠 RAG-Powered LLM Financial Summarizer
+#### RAG-Powered LLM Financial Summarizer
 
 - Upload company financial reports (PDFs) like earnings calls or investor decks
 
